@@ -3,13 +3,16 @@ module.exports = {
     env: {
         browser: true,
         node: true,
+        es6: true,
+        jquery: true,
     },
     extends: [
         '@nuxtjs/eslint-config-typescript',
         'plugin:prettier/recommended',
         'plugin:nuxt/recommended',
+        'prettier',
     ],
-    plugins: [],
+    plugins: ['prettier'],
     // add your custom rules here
     rules: {
         'no-console': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
@@ -96,5 +99,14 @@ module.exports = {
         // Enforce valid nextTick function calls
         'vue/valid-next-tick': ['error'],
         '@typescript-eslint/no-unused-vars': ['error', { args: 'none' }],
+    },
+    globals: {
+        $nuxt: true,
+    },
+    parserOptions: {
+        parser: '@typescript-eslint/parser',
+    },
+    settings: {
+        'import/ignore': ['node_modules'],
     },
 };
