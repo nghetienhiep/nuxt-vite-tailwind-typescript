@@ -1,4 +1,4 @@
-# nuxt-vite-tailwind-typescript
+# Nuxt + Vite + Tailwind + Typescript
 
 ## Build Setup
 
