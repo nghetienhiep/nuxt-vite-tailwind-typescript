@@ -1,0 +1,15 @@
+:root {
+    --primary-color: #1caa4d;
+    --dark-color: #2f4858;
+    --body-color: #fff;
+    --text-color: #303030;
+    --heading-color: #262d52;
+    --placeholder-color: rgba(0, 0, 0, 0.7);
+    --hint-color: #f1f4fd;
+    --border-color: #e2e2ed;
+    --divider-color: #eaebf0;
+
+    --input-bg: #fff;
+
+    --font: 'Roboto';
+}

@@ -1,6 +1,12 @@
-export const state = () => ({});
+import { IStoreIndex } from 'interfaces';
 
-export const getters = {};
+export const state = () => ({
+    theme: 'dark',
+});
+
+export const getters = {
+    theme: (state: IStoreIndex) => state.theme,
+};
 
 export const actions = {};
 

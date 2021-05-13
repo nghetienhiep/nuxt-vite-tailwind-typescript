@@ -1,4 +1,7 @@
 export default {
+    server: {
+        port: 8000, // default: 3000
+    },
     // Global page headers: https://go.nuxtjs.dev/config-head
     head: {
         title: 'nuxt-vite-tailwind-typescript',
@@ -18,7 +21,7 @@ export default {
     },
 
     // Global CSS: https://go.nuxtjs.dev/config-css
-    css: [],
+    css: ['@/assets/css/variables.css', '@/assets/css/style.css'],
 
     // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
     plugins: ['~/plugins/axios', '~/plugins/api'],
@@ -28,6 +31,7 @@ export default {
 
     // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
     buildModules: [
+        '@nuxtjs/style-resources',
         // https://go.nuxtjs.dev/typescript
         '@nuxt/typescript-build',
         // https://go.nuxtjs.dev/stylelint
@@ -48,14 +52,31 @@ export default {
         '@nuxtjs/axios',
         // https://go.nuxtjs.dev/pwa
         '@nuxtjs/pwa',
+        [
+            'nuxt-i18n',
+            {
+                seo: true,
+                defaultLocale: 'vi',
+                locales: [
+                    {
+                        name: 'Vietnamese',
+                        code: 'vi',
+                        iso: 'vi-VN',
+                        file: 'vi.js',
+                    },
+                    {
+                        name: 'English',
+                        code: 'en',
+                        iso: 'en-GB',
+                        file: 'en.js',
+                    },
+                ],
+                lazy: true,
+                langDir: 'locales/',
+                detectBrowserLanguage: false,
+            },
+        ],
     ],
-
-    vite: {
-        /* options for vite */
-        vue: {
-            /* options for vite-plugin-vue2 */
-        },
-    },
 
     tailwindcss: {
         jit: true,
@@ -64,10 +85,9 @@ export default {
     image: {},
 
     googleFonts: {
-        download: true,
         display: 'swap',
         families: {
-            Inter: true,
+            Roboto: true,
         },
     },
 
